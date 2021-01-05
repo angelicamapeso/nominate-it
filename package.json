@@ -2,7 +2,8 @@
   "name": "top-5-list",
   "version": "1.0.0",
   "description": "Nominate your top 5 movies",
-  "main": "index.js",
+  "type": "module",
+  "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
