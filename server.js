@@ -1,9 +1,10 @@
 import express from "express";
+import apiRoutes from "./routes/api-routes.js";
+
 const app = express();
 
-app.get("/", (req, res) => {
-  res.send("It's ALIVE!!");
-});
+// Routers
+app.use(apiRoutes);
 
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
