@@ -1,5 +1,6 @@
 import express from "express";
 import apiRoutes from "./routes/api-routes.js";
+import htmlRoutes from "./routes/html-routes.js";
 import mongoose from "mongoose";
 
 // App
@@ -10,6 +11,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
 // Routers
+app.use(htmlRoutes);
 app.use("/api", apiRoutes);
 
 // Start app listening
