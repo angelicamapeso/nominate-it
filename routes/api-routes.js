@@ -10,7 +10,7 @@ const router = Router();
 router.get("/", async (req, res) => {
   try {
     const result = await MovieList.find({}).populate("movies");
-    res.send(result);
+    res.status(200).send(result);
   } catch (err) {
     console.log(err);
     res.status(500).send({ error: err.message });
