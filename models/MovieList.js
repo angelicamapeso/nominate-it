@@ -15,7 +15,8 @@ const movieListSchema = new Schema(
         "Movie list must have 5 movies.",
       ],
     },
-  }
+  },
+  { id: false }
 );
 
 movieListSchema.virtual("movies", {
