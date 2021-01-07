@@ -9,7 +9,7 @@ const router = Router();
 
 router.get("/", async (req, res) => {
   try {
-    const result = await MovieList.find({}).populate("movie_data");
+    const result = await MovieList.find({}).populate("movies");
     res.send(result);
   } catch (err) {
     console.log(err);
@@ -27,7 +27,7 @@ router.post("/", async (req, res) => {
   const movieListResult = await MovieList.create(
     formatMovieListInsert(req.body)
   );
-  await movieListResult.populate("movie_data").execPopulate();
+  await movieListResult.populate("movies").execPopulate();
   res.send({
     data: { movieList: movieListResult, bulkMovieInsert: bulkMovieResult },
   });

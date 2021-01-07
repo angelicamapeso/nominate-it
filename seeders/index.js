@@ -19,7 +19,7 @@ async function runSeed() {
     const insertedLists = await MovieList.insertMany(lists);
     console.log(`${insertedLists.length} lists inserted!`);
 
-    const docs = await MovieList.find({}).populate("movie_data");
+    const docs = await MovieList.find({}).populate("movies");
     console.log("All documents: ", docs);
   } catch (err) {
     console.error(err);

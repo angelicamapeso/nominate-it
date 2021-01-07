@@ -18,5 +18,7 @@ export function formatBulkMoviesInsert(movies) {
 // imdbID is used as reference to the movie
 export function formatMovieListInsert(movieList) {
   const movieIDs = movieList.movies.map(movie => movie.imdbID);
-  return { ...movieList, movies: movieIDs };
+  const toInsert = { ...movieList, movieIDs: movieIDs };
+  delete toInsert.movies;
+  return toInsert;
 }
