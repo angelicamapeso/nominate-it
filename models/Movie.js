@@ -15,19 +15,8 @@ const movieSchema = new Schema({
     type: String,
     required: true,
   },
-  rated: {
-    type: String,
-    required: true,
-  },
-  genre: {
-    type: [String],
-  },
-  plot: {
-    type: String,
-  },
   poster: {
     type: String,
-    required: true,
   },
 });
 
