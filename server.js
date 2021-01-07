@@ -5,6 +5,10 @@ import mongoose from "mongoose";
 // App
 const app = express();
 
+// JSON-parsing middle-ware
+app.use(express.urlencoded({ extended: true }));
+app.use(express.json());
+
 // Routers
 app.use("/api", apiRoutes);
 
