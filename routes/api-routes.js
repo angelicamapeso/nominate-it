@@ -4,8 +4,13 @@ import { Movie, MovieList } from "../models/index.js";
 const router = Router();
 
 router.get("/", async (req, res) => {
-  const result = await MovieList.find({}).populate("movie_data");
-  res.send(result);
+  try {
+    const result = await MovieList.find({}).populate("movie_data");
+    res.send(result);
+  } catch (err) {
+    console.log(err);
+    res.status(500).send({ error: err.message });
+  }
 });
 
 router.post("/", async (req, res) => {
