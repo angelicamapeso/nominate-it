@@ -6,7 +6,7 @@ import mongoose from "mongoose";
 const app = express();
 
 // Routers
-app.use(apiRoutes);
+app.use("/api", apiRoutes);
 
 // Start app listening
 const PORT = process.env.PORT || 3000;
