@@ -15,6 +15,8 @@ router.get("/", async (req, res) => {
 });
 
 router.post("/", async (req, res) => {
+  // expected req.body includes all movie info
+  // under movies property
   const bulkMovieResult = await Movie.bulkWrite(
     formatBulkMovies(req.body.movies)
   );
