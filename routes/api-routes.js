@@ -1,6 +1,6 @@
 import { Router } from "express";
 import { Movie, MovieList } from "../models/index.js";
-import { formatBulkMovies } from "../utils/formatter.js";
+import { formatBulkMovies, formatMovieListInsert } from "../utils/formatter.js";
 
 const router = Router();
 
@@ -19,9 +19,9 @@ router.post("/", async (req, res) => {
     formatBulkMovies(req.body.movies)
   );
   // Stripping movie info to insert as list
-  const movieIDs = req.body.movies.map(movie => movie.imdbID);
-  const movieList = { ...req.body, movies: movieIDs };
-  const movieListResult = await MovieList.create(movieList);
+  const movieListResult = await MovieList.create(
+    formatMovieListInsert(req.body)
+  );
   await movieListResult.populate("movie_data").execPopulate();
   res.send({
     data: { movieList: movieListResult, bulkMovieInsert: bulkMovieResult },
