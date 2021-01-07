@@ -2,7 +2,7 @@
 
 // takes an array of moves
 // formats for bulk insert
-export function formatBulkMovies(movies) {
+export function formatBulkMoviesInsert(movies) {
   return movies.map(movie => ({
     updateOne: {
       filter: { imdbID: movie.imdbID },

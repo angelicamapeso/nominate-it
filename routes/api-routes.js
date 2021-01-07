@@ -1,6 +1,9 @@
 import { Router } from "express";
 import { Movie, MovieList } from "../models/index.js";
-import { formatBulkMovies, formatMovieListInsert } from "../utils/formatter.js";
+import {
+  formatBulkMoviesInsert,
+  formatMovieListInsert,
+} from "../utils/formatter.js";
 
 const router = Router();
 
@@ -18,7 +21,7 @@ router.post("/", async (req, res) => {
   // expected req.body includes all movie info
   // under movies property
   const bulkMovieResult = await Movie.bulkWrite(
-    formatBulkMovies(req.body.movies)
+    formatBulkMoviesInsert(req.body.movies)
   );
   // Stripping movie info to insert as list
   const movieListResult = await MovieList.create(
