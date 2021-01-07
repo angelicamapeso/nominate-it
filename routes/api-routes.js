@@ -18,19 +18,24 @@ router.get("/", async (req, res) => {
 });
 
 router.post("/", async (req, res) => {
-  // expected req.body includes all movie info
-  // under movies property
-  const bulkMovieResult = await Movie.bulkWrite(
-    formatBulkMoviesInsert(req.body.movies)
-  );
-  // Stripping movie info to insert as list
-  const movieListResult = await MovieList.create(
-    formatMovieListInsert(req.body)
-  );
-  await movieListResult.populate("movies").execPopulate();
-  res.send({
-    data: { movieList: movieListResult, bulkMovieInsert: bulkMovieResult },
-  });
+  try {
+    // expected req.body includes all movie info
+    // under movies property
+    const bulkMovieResult = await Movie.bulkWrite(
+      formatBulkMoviesInsert(req.body.movies)
+    );
+    // Stripping movie info to insert as list
+    const movieListResult = await MovieList.create(
+      formatMovieListInsert(req.body)
+    );
+    await movieListResult.populate("movies").execPopulate();
+    res.status(201).send({
+      data: { movieList: movieListResult, bulkMovieInsert: bulkMovieResult },
+    });
+  } catch (err) {
+    console.log(err);
+    res.status(500).send({ error: err.message });
+  }
 });
 
 export default router;
