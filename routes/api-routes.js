@@ -1,4 +1,5 @@
 import { Router } from "express";
+import mongoose from "mongoose";
 import { Movie, MovieList } from "../models/index.js";
 import {
   formatBulkMoviesInsert,
@@ -11,6 +12,21 @@ router.get("/", async (req, res) => {
   try {
     const result = await MovieList.find({}).populate("movies");
     res.status(200).send(result);
+  } catch (err) {
+    console.log(err);
+    res.status(500).send({ error: err.message });
+  }
+});
+
+router.get("/:id", async (req, res) => {
+  try {
+    const id = mongoose.Types.ObjectId(req.params.id);
+    const result = await MovieList.findOne({ _id: id }).populate("movies");
+    if (!result || result.length === 0) {
+      res.status(404).send({ data: "Movie list not found! " });
+    } else {
+      res.status(200).send({ data: result });
+    }
   } catch (err) {
     console.log(err);
     res.status(500).send({ error: err.message });
