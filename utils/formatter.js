@@ -11,3 +11,12 @@ export function formatBulkMovies(movies) {
     },
   }));
 }
+
+// takes expected request body / movielist
+// strips movie info except for imdbID property to insert into database
+// this is because database is designed to not repeat movie entries
+// imdbID is used as reference to the movie
+export function formatMovieListInsert(movieList) {
+  const movieIDs = movieList.movies.map(movie => movie.imdbID);
+  return { ...movieList, movies: movieIDs };
+}
