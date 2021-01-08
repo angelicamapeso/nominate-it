@@ -15,7 +15,7 @@ app.use(htmlRoutes);
 app.use("/api", apiRoutes);
 
 // Start app listening
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 5000;
 mongoose
   .connect(process.env.MONGODB_URI || "mongodb://localhost/top5db", {
     useNewUrlParser: true,
