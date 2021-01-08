@@ -2,7 +2,6 @@ import express from "express";
 import apiRoutes from "./routes/api-routes.js";
 import htmlRoutes from "./routes/html-routes.js";
 import mongoose from "mongoose";
-import exphbs from "express-handlebars";
 
 // App
 const app = express();
@@ -10,10 +9,6 @@ const app = express();
 // JSON-parsing middle-ware
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
-
-// Handlebars
-app.engine("handlebars", exphbs());
-app.set("view engine", "handlebars");
 
 // Routers
 app.use(htmlRoutes);
