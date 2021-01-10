@@ -25,7 +25,7 @@ function Home() {
                   <SearchCard />
                 </div>
                 <div className="col">
-                  <SearchCard />
+                  <SearchCard nominated={true} />
                 </div>
               </div>
             </div>

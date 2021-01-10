@@ -2,7 +2,7 @@ import React from "react";
 import Button from "../Button";
 import "./style.css";
 
-function SearchCard() {
+function SearchCard(props) {
   return (
     <div className="card flex-row my-3">
       <img
@@ -12,8 +12,17 @@ function SearchCard() {
       />
       <div className="card-body p-0 d-flex flex-column justify-content-between">
         <p className="h5 p-3">Me And You And Everyone We Know (1978)</p>
-        <Button className="stretched-link py-2 card-button" theme="grey">
-          <i className="fas fa-plus-circle mr-2"></i>Nominate
+        <Button
+          className="stretched-link py-2 card-button"
+          theme={props.nominated ? "dark" : "grey"}
+        >
+          <i
+            className={
+              "fas mr-2 " +
+              (props.nominated ? "fa-times-circle" : "fa-plus-circle")
+            }
+          ></i>
+          {props.nominated ? "Remove" : "Nominate"}
         </Button>
       </div>
     </div>
