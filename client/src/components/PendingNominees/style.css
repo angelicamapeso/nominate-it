@@ -2,6 +2,7 @@
   position: fixed;
   bottom: 0;
   width: 100%;
+  height: 100%;
   z-index: 1000;
 }
 
@@ -26,6 +27,11 @@
   #pending-title,
   #send-nominations {
     border-radius: 0;
+  }
+
+  #nomineeList {
+    max-height: 90vh;
+    overflow-y: scroll;
   }
 }
 

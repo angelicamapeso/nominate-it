@@ -37,7 +37,10 @@ function PendingNominees() {
   );
 
   return (
-    <section className="d-flex flex-column" id="nominee-section">
+    <section
+      className="d-flex flex-column justify-content-end"
+      id="nominee-section"
+    >
       <div className="d-flex flex-row">
         {title}
         <Button theme="light" className="p-3" id="send-nominations">
