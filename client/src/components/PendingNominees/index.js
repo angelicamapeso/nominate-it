@@ -44,13 +44,13 @@ function PendingNominees() {
         </Button>
       </div>
       <div className={"collapse" + (isLarge ? "show" : "")} id="nomineeList">
-        <ul>
+        <ol>
           <li>List of items</li>
           <li>List of items</li>
           <li>List of items</li>
           <li>List of items</li>
           <li>List of items</li>
-        </ul>
+        </ol>
       </div>
     </section>
   );
