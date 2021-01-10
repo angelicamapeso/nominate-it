@@ -14,15 +14,15 @@ function SearchCard(props) {
         <p className="h5 p-3">Me And You And Everyone We Know (1978)</p>
         <Button
           className="stretched-link py-2 card-button"
-          theme={props.nominated ? "dark" : "grey"}
+          theme={props.pending ? "dark" : "grey"}
         >
           <i
             className={
               "fas mr-2 " +
-              (props.nominated ? "fa-times-circle" : "fa-plus-circle")
+              (props.pending ? "fa-times-circle" : "fa-plus-circle")
             }
           ></i>
-          {props.nominated ? "Remove" : "Nominate"}
+          {props.pending ? "Remove" : "Nominate"}
         </Button>
       </div>
     </div>
