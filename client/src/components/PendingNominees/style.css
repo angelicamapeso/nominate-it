@@ -2,30 +2,26 @@
   position: fixed;
   bottom: 0;
   width: 100%;
+  z-index: 1000;
 }
 
 #pending-count {
+  color: #37323e;
   display: inline-block;
-  width: 50px;
-  height: 50px;
-  line-height: 45px;
+  margin-top: 0.4rem;
+  width: 40px;
+  height: 40px;
+  line-height: 35px;
   border-radius: 50%;
   text-align: center;
   position: relative;
+  background-color: white;
   border: 1px solid #781323;
-}
-
-#pending-title {
-  background-color: #781323;
 }
 
 @media (min-width: 992px) {
   #nominee-section {
     position: relative;
-  }
-
-  #pending-title {
-    background-color: white;
   }
 
   #nomineeList {
