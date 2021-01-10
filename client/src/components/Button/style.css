@@ -1,0 +1,24 @@
+button.btn-dark-red,
+button.btn-light-red {
+  color: white;
+  border: none;
+}
+
+button.btn-dark-red:hover,
+button.btn-light-red:hover,
+button.btn-dark-red:active,
+button.btn-light-red:active,
+button.btn-dark-red:focus,
+button.btn-light-red:focus {
+  color: white;
+  background-color: #380810;
+  box-shadow: 0 0 0 0.2rem rgba(120, 19, 35, 0.25);
+}
+
+button.btn-dark-red {
+  background-color: #781323;
+}
+
+button.btn-light-red {
+  background-color: #d33f49;
+}
