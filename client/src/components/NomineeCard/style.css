@@ -1,5 +1,6 @@
 .nominee-image {
   width: 20%;
+  min-height: 0;
 }
 
 .card.nominee-card {
