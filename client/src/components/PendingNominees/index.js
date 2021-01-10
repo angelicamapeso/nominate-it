@@ -17,7 +17,7 @@ function PendingNominees() {
       aria-expanded="false"
       aria-controls="nomineeList"
     >
-      <p className="h6 d-flex flex-row justify-content-between align-items-center">
+      <p className="h6 d-flex flex-row justify-content-between align-items-center mb-0">
         <span>
           <span id="pending-count">5</span> of 5 Nominations
         </span>
@@ -26,10 +26,10 @@ function PendingNominees() {
     </Button>
   ) : (
     <div
-      className="d-flex flex-row justify-content-between flex-grow-1"
+      className="d-flex flex-row justify-content-between align-items-center flex-grow-1"
       id="pending-title"
     >
-      <p className="h4">
+      <p className="h4 mb-0">
         <span id="pending-count">5</span> of 5 Nominations
       </p>
     </div>
@@ -39,7 +39,7 @@ function PendingNominees() {
     <section className="d-flex flex-column" id="nominee-section">
       <div className="d-flex flex-row">
         {title}
-        <Button theme="light">
+        <Button theme="light" className="p-3">
           <i className="fas fa-paper-plane"></i>
         </Button>
       </div>
