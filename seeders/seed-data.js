@@ -33,15 +33,12 @@ export const movies = [
 
 export const lists = [
   {
-    name: "Bob Ross",
     movieIDs: ["1", "2", "3", "4", "5"],
   },
   {
-    name: "Spongebob",
     movieIDs: ["1", "2", "3", "4", "5"],
   },
   {
-    name: "Patrick",
     movieIDs: ["1", "2", "3", "4", "5"],
   },
 ];

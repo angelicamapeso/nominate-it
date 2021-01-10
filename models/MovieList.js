@@ -3,10 +3,6 @@ const { Schema } = mongoose;
 
 const movieListSchema = new Schema(
   {
-    name: {
-      type: String,
-      required: true,
-    },
     // movies saved with imdbID
     movieIDs: {
       type: [String],
