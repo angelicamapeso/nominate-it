@@ -15,10 +15,23 @@ button.btn-light-red:focus {
   box-shadow: 0 0 0 0.2rem rgba(120, 19, 35, 0.25);
 }
 
+button.btn-grey:hover,
+button.btn-grey:active,
+button.btn-grey:focus {
+  color: white;
+  background-color: #37323e;
+  box-shadow: 0 0 0 0.2rem rgba(55, 50, 62, 0.25);
+}
+
 button.btn-dark-red {
   background-color: #781323;
 }
 
 button.btn-light-red {
   background-color: #d33f49;
+}
+
+button.btn-grey {
+  color: #37323e;
+  background-color: #dddddd;
 }

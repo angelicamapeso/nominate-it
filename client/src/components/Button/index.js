@@ -10,7 +10,11 @@ function Button(props) {
           ? "btn-dark-red"
           : props.theme === "light"
           ? "btn-light-red"
-          : "")
+          : props.theme === "grey"
+          ? "btn-grey"
+          : "") +
+        " " +
+        props.className
       }
     >
       {props.children}
