@@ -43,13 +43,13 @@ function PendingNominees() {
           <i className="fas fa-paper-plane"></i>
         </Button>
       </div>
-      <div className={"collapse" + (isLarge ? "show" : "")} id="nomineeList">
-        <ol>
-          <li>List of items</li>
-          <li>List of items</li>
-          <li>List of items</li>
-          <li>List of items</li>
-          <li>List of items</li>
+      <div className={"collapse " + (isLarge ? "show" : "")} id="nomineeList">
+        <ol className="p-3">
+          <li>
+            <div className="card">
+              <div className="card-body">Something</div>
+            </div>
+          </li>
         </ol>
       </div>
     </section>
