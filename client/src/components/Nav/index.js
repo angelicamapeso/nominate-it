@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import Button from "../Button";
 
 function Nav() {
   return (
@@ -10,7 +11,9 @@ function Nav() {
       <ul className="navbar-nav">
         <li className="nav-item">
           <Link className="nav-link" to="/nominees">
-            Nominees
+            <Button theme="dark">
+              <i className="fas fa-medal mr-2"></i>Nominees
+            </Button>
           </Link>
         </li>
       </ul>
