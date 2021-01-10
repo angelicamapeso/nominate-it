@@ -4,6 +4,7 @@ import "./style.css";
 function Button(props) {
   return (
     <button
+      {...props}
       className={
         "btn " +
         (props.theme === "dark"
