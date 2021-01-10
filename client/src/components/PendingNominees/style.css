@@ -20,4 +20,15 @@
 }
 
 @media (min-width: 992px) {
+  #nominee-section {
+    position: relative;
+  }
+
+  #pending-title {
+    background-color: white;
+  }
+
+  #nomineeList {
+    display: block;
+  }
 }
