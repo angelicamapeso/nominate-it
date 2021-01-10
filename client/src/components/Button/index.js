@@ -12,7 +12,7 @@ function Button(props) {
           ? "btn-light-red"
           : props.theme === "grey"
           ? "btn-grey"
-          : "") +
+          : "btn-theme-none") +
         " " +
         props.className
       }
