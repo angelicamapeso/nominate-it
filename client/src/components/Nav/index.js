@@ -5,7 +5,7 @@ import Button from "../Button";
 function Nav() {
   return (
     <section className="bg-light">
-      <div className="container-lg">
+      <div className="container-fluid px-5">
         <nav className="navbar navbar-light px-0">
           <Link className="navbar-brand" to="/">
             Nominate it!

@@ -7,15 +7,15 @@ function Home() {
   return (
     <>
       <section className="bg-light pt-3 pb-2">
-        <div className="container-lg">
+        <div className="container-fluid px-5">
           <h1>What's your top 5 movies?</h1>
         </div>
       </section>
-      <section className="container-lg p-0 d-flex flex-column flex-lg-row">
-        <div className="container-lg">
+      <section className="container-fluid p-0 d-flex flex-column flex-lg-row">
+        <div className="container-fluid px-5">
           <div className="row">
             <div className="col">
-              <div className="row mt-3">
+              <div className="row mt-4">
                 <div className="col">
                   <SearchForm />
                 </div>
@@ -31,7 +31,7 @@ function Home() {
             </div>
           </div>
         </div>
-        <div className="container-lg p-0 p-lg-3">
+        <div className="container-fluid p-0 my-3 px-lg-5">
           <PendingNominees />
         </div>
       </section>
