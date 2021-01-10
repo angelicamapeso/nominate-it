@@ -18,6 +18,13 @@
   border: 1px solid #781323;
 }
 
+@media (max-width: 992px) {
+  #pending-title,
+  #send-nominations {
+    border-radius: 0;
+  }
+}
+
 @media (min-width: 992px) {
   #nominee-section {
     position: relative;

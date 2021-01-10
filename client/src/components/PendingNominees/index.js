@@ -39,7 +39,7 @@ function PendingNominees() {
     <section className="d-flex flex-column" id="nominee-section">
       <div className="d-flex flex-row">
         {title}
-        <Button theme="light" className="p-3">
+        <Button theme="light" className="p-3" id="send-nominations">
           <i className="fas fa-paper-plane"></i>
         </Button>
       </div>
