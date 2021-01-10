@@ -1,5 +1,6 @@
 import React from "react";
 import { useMediaQuery } from "react-responsive";
+import NomineeList from "../NomineeList";
 import Button from "../../components/Button";
 import "./style.css";
 
@@ -44,13 +45,7 @@ function PendingNominees() {
         </Button>
       </div>
       <div className={"collapse " + (isLarge ? "show" : "")} id="nomineeList">
-        <ol className="p-3">
-          <li>
-            <div className="card">
-              <div className="card-body">Something</div>
-            </div>
-          </li>
-        </ol>
+        <NomineeList />
       </div>
     </section>
   );
