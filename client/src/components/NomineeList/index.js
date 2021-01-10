@@ -5,11 +5,11 @@ import "./style.css";
 function NomineeList() {
   return (
     <ol className="px-5 px-lg-0 py-3 nominees">
-      <NomineeCard />
-      <NomineeCard />
-      <NomineeCard />
-      <NomineeCard />
-      <NomineeCard />
+      <NomineeCard pending={true} />
+      <NomineeCard pending={true} />
+      <NomineeCard pending={true} />
+      <NomineeCard pending={true} />
+      <NomineeCard pending={true} />
     </ol>
   );
 }
