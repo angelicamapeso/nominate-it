@@ -9,10 +9,17 @@ function SearchForm(props) {
   const onSubmit = e => {
     e.preventDefault();
     const searchTerm = searchRef.current.value;
-    searchOMDB(searchTerm).then(movies => {
-      props.setSearch({ ...movies, searchTerm });
-      searchRef.current.value = "";
-    });
+    if (searchTerm) {
+      searchOMDB(searchTerm).then(movies => {
+        props.setSearch({ ...movies, searchTerm });
+        searchRef.current.value = "";
+      });
+    } else {
+      props.setSearch({
+        err: "Please enter a movie title to start your search.",
+        searchTerm: "",
+      });
+    }
   };
 
   return (
