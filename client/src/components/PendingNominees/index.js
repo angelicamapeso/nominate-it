@@ -8,7 +8,7 @@ import "./style.css";
 
 function PendingNominees() {
   const isLarge = useMediaQuery({ query: "(min-width: 992px)" });
-  const { errMessage, pending, setErrMessage } = usePending();
+  const { errMessage, statusMessage, pending, setErrMessage } = usePending();
 
   const error = errMessage ? (
     <Alert
@@ -23,11 +23,20 @@ function PendingNominees() {
     <></>
   );
 
+  const status = statusMessage ? (
+    <Alert className={!isLarge ? "mb-0 rounded-0" : ""} type="success">
+      {statusMessage}
+    </Alert>
+  ) : (
+    <></>
+  );
+
   return (
     <section
       className="d-flex flex-column justify-content-end"
       id="nominee-section"
     >
+      {status}
       {error}
       <div className="d-flex flex-row">
         <NomineeToggle target="nomineeList" count={pending.length} />
