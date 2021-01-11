@@ -15,7 +15,7 @@ function Alert(props) {
       {props.dismissible ? (
         <button
           type="button"
-          class="close"
+          className="close"
           data-dismiss="alert"
           aria-label="Close"
           onClick={props.onClick}
