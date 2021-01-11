@@ -6,7 +6,7 @@ export function searchOMDB(title) {
   return fetch(url)
     .then(response => response.json())
     .then(result => {
-      if (result.Response) {
+      if (result.Response !== "False") {
         return {
           movies: result.Search.map(movie => formatOMDBMovie(movie)),
           totalResults: result.totalResults,
