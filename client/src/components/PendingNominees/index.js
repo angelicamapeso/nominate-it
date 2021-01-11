@@ -1,5 +1,6 @@
 import React from "react";
 import { useMediaQuery } from "react-responsive";
+import NomineeCard from "../NomineeCard";
 import NomineeList from "../NomineeList";
 import NomineeToggle from "../NomineeToggle";
 import Alert from "../Alert";
@@ -8,7 +9,13 @@ import "./style.css";
 
 function PendingNominees() {
   const isLarge = useMediaQuery({ query: "(min-width: 992px)" });
-  const { errMessage, statusMessage, pending, setErrMessage } = usePending();
+  const {
+    errMessage,
+    statusMessage,
+    pending,
+    removePending,
+    setErrMessage,
+  } = usePending();
 
   const error = errMessage ? (
     <Alert
@@ -42,7 +49,15 @@ function PendingNominees() {
         <NomineeToggle target="nomineeList" count={pending.length} />
       </div>
       <div className={"collapse " + (isLarge ? "show" : "")} id="nomineeList">
-        <NomineeList />
+        <NomineeList>
+          {pending.map(movie => (
+            <NomineeCard
+              key={movie.imdbID}
+              movie={movie}
+              removePending={() => removePending(movie.imdbID)}
+            />
+          ))}
+        </NomineeList>
       </div>
     </section>
   );
