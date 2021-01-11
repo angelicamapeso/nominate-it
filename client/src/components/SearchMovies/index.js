@@ -1,14 +1,20 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import SearchCard from "../SearchCard";
 import SearchForm from "../SearchForm";
 
 function SearchMovies() {
+  const [search, setSearch] = useState([]);
+
+  useEffect(() => {
+    console.log(search);
+  }, [search]);
+
   return (
     <div className="row">
       <div className="col">
         <div className="row mt-4">
           <div className="col">
-            <SearchForm />
+            <SearchForm setSearch={setSearch} />
           </div>
         </div>
         <div className="row">
