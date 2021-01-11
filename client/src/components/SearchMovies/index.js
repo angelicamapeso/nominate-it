@@ -3,7 +3,11 @@ import SearchCard from "../SearchCard";
 import SearchForm from "../SearchForm";
 
 function SearchMovies() {
-  const [search, setSearch] = useState([]);
+  const [search, setSearch] = useState({
+    movies: [],
+    totalResults: 0,
+    searchTerm: "",
+  });
 
   useEffect(() => {
     console.log(search);
