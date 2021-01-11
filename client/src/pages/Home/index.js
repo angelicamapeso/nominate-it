@@ -1,6 +1,7 @@
 import React from "react";
 import SearchMovies from "../../components/SearchMovies";
 import PendingNominees from "../../components/PendingNominees";
+import { PendingProvider } from "../../utils/PendingContext";
 
 function Home() {
   return (
@@ -11,12 +12,14 @@ function Home() {
         </div>
       </section>
       <section className="container-fluid p-0 d-flex flex-column flex-lg-row">
-        <div className="container-fluid px-lg-5 px-md-3">
-          <SearchMovies />
-        </div>
-        <div className="container-fluid p-0 my-3 px-lg-5">
-          <PendingNominees />
-        </div>
+        <PendingProvider>
+          <div className="container-fluid px-lg-5 px-md-3">
+            <SearchMovies />
+          </div>
+          <div className="container-fluid p-0 my-3 px-lg-5">
+            <PendingNominees />
+          </div>
+        </PendingProvider>
       </section>
     </>
   );
