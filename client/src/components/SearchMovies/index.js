@@ -11,6 +11,16 @@ function SearchMovies() {
     searchTerm: "",
   });
 
+  const setNominate = (imdbID, nominateBool) => {
+    const changedMovies = search.movies.map(movie => {
+      if (movie.imdbID === imdbID) {
+        movie.pending = nominateBool;
+      }
+      return movie;
+    });
+    setSearch({ ...search, movies: changedMovies });
+  };
+
   return (
     <div className="row">
       <div className="col">
@@ -35,7 +45,11 @@ function SearchMovies() {
           {search.movies
             ? search.movies.map((movie, index) => (
                 <div className="col-6 d-flex" key={index}>
-                  <SearchCard movie={movie} />
+                  <SearchCard
+                    movie={movie}
+                    nominate={() => setNominate(movie.imdbID, true)}
+                    unnominate={() => setNominate(movie.imdbID, false)}
+                  />
                 </div>
               ))
             : ""}
