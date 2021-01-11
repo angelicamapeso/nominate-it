@@ -2,16 +2,22 @@ import React, { useRef } from "react";
 import Button from "../Button";
 import "./style.css";
 import { searchOMDB } from "../../utils/API";
+import { usePending } from "../../utils/PendingContext";
 
 function SearchForm(props) {
+  const { markPendingOnSearch } = usePending();
   const searchRef = useRef();
 
   const onSubmit = e => {
     e.preventDefault();
     const searchTerm = searchRef.current.value.trim();
     if (searchTerm) {
-      searchOMDB(searchTerm).then(movies => {
-        props.setSearch({ ...movies, searchTerm });
+      searchOMDB(searchTerm).then(result => {
+        props.setSearch({
+          ...result,
+          movies: result.movies.map(movie => markPendingOnSearch(movie)),
+          searchTerm,
+        });
         searchRef.current.value = "";
       });
     } else {
