@@ -49,7 +49,7 @@ function PendingNominees() {
         <NomineeToggle target="nomineeList" count={pending.length} />
       </div>
       <div className={"collapse " + (isLarge ? "show" : "")} id="nomineeList">
-        <NomineeList>
+        <NomineeList className="px-5 px-lg-0 py-3">
           {pending.map(movie => (
             <NomineeCard
               key={movie.imdbID}
