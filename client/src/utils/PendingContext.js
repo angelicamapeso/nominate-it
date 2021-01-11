@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { sendNominees } from "./API.js";
 
 const PendingContext = React.createContext();
 
@@ -38,6 +39,19 @@ export function PendingProvider(props) {
     return movieCopy;
   };
 
+  // send pending
+  const sendPending = () => {
+    if (pending.length === 5) {
+      sendNominees(pending).then(response => {
+        if (response.data) {
+          setPending([]);
+        }
+      });
+    } else {
+      setErrMessage("You must have exactly 5 nominations to send them in!");
+    }
+  };
+
   return (
     <PendingContext.Provider
       value={{
@@ -46,6 +60,7 @@ export function PendingProvider(props) {
         setErrMessage,
         addPending,
         removePending,
+        sendPending,
         markPendingOnSearch,
       }}
       {...props}
