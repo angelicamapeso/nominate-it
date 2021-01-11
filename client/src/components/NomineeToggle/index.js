@@ -12,7 +12,7 @@ function NomineeToggle(props) {
       id="pending-title"
     >
       <p className="h4 mb-0">
-        <span id="pending-count">5</span> of 5 Nominations
+        <span id="pending-count">{props.count}</span> of 5 Nominations
       </p>
     </div>
   );
@@ -30,7 +30,7 @@ function NomineeToggle(props) {
     >
       <p className="h6 d-flex flex-row justify-content-between align-items-center mb-0">
         <span>
-          <span id="pending-count">5</span> of 5 Nominations
+          <span id="pending-count">{props.count}</span> of 5 Nominations
         </span>
         <i className="fas fa-pen"></i>
       </p>
