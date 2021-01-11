@@ -5,7 +5,9 @@ function Error(props) {
     <div
       className={
         "alert alert-danger " +
-        (props.dismissible ? `alert-dismissible fade show` : "")
+        (props.dismissible ? "alert-dismissible fade show" : "") +
+        " " +
+        props.className
       }
       role="alert"
     >
@@ -16,6 +18,7 @@ function Error(props) {
           class="close"
           data-dismiss="alert"
           aria-label="Close"
+          onClick={props.onClick}
         >
           <span aria-hidden="true">&times;</span>
         </button>
