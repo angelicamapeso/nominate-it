@@ -18,15 +18,16 @@ function SearchCard(props) {
         </p>
         <Button
           className="stretched-link py-2 card-button"
-          theme={props.pending ? "dark" : "grey"}
+          theme={props.movie.pending ? "dark" : "grey"}
+          onClick={props.movie.pending ? props.unnominate : props.nominate}
         >
           <i
             className={
               "fas mr-2 " +
-              (props.pending ? "fa-times-circle" : "fa-plus-circle")
+              (props.movie.pending ? "fa-times-circle" : "fa-plus-circle")
             }
           ></i>
-          {props.pending ? "Remove" : "Nominate"}
+          {props.movie.pending ? "Remove" : "Nominate"}
         </Button>
       </div>
     </div>
