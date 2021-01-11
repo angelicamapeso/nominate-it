@@ -9,7 +9,7 @@ export function searchOMDB(title) {
       if (result.Response !== "False") {
         return {
           movies: result.Search.map(movie => formatOMDBMovie(movie)),
-          totalResults: result.totalResults,
+          totalResults: result.Search.length,
         };
       } else {
         return { err: result.Error };
