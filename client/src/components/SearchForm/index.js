@@ -13,11 +13,15 @@ function SearchForm(props) {
     const searchTerm = searchRef.current.value.trim();
     if (searchTerm) {
       searchOMDB(searchTerm).then(result => {
-        props.setSearch({
-          ...result,
-          movies: result.movies.map(movie => markPendingOnSearch(movie)),
-          searchTerm,
-        });
+        if (!result.err) {
+          props.setSearch({
+            ...result,
+            movies: result.movies.map(movie => markPendingOnSearch(movie)),
+            searchTerm,
+          });
+        } else {
+          props.setSearch({ ...result });
+        }
         searchRef.current.value = "";
       });
     } else {
