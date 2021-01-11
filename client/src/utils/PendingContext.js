@@ -7,9 +7,17 @@ export function PendingProvider(props) {
   // list of pending nominees
   const [pending, setPending] = useState([]);
   const [errMessage, setErrMessage] = useState("");
+  const [statusMessage, setStatusMessage] = useState("");
 
   useEffect(() => {
-    console.log(pending);
+    // console.log(pending);
+    if (pending.length === 5) {
+      setStatusMessage(
+        "You now have 5 nominations! Whenever you're ready, you can send them in."
+      );
+    } else {
+      setStatusMessage("");
+    }
   }, [pending]);
 
   // add pending
@@ -57,6 +65,7 @@ export function PendingProvider(props) {
       value={{
         pending,
         errMessage,
+        statusMessage,
         setErrMessage,
         addPending,
         removePending,
