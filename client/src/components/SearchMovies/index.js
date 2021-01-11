@@ -37,8 +37,8 @@ function SearchMovies() {
         </div>
         <div className="row">
           {search.movies
-            ? search.movies.map(movie => (
-                <div className="col-6 d-flex">
+            ? search.movies.map((movie, index) => (
+                <div className="col-6 d-flex" key={index}>
                   <SearchCard movie={movie} />
                 </div>
               ))
