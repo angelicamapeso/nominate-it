@@ -2,7 +2,7 @@ import React from "react";
 import { useMediaQuery } from "react-responsive";
 import NomineeList from "../NomineeList";
 import NomineeToggle from "../NomineeToggle";
-import Error from "../Error";
+import Alert from "../Alert";
 import { usePending } from "../../utils/PendingContext";
 import "./style.css";
 
@@ -11,12 +11,18 @@ function PendingNominees() {
   const { errMessage, pending, setErrMessage } = usePending();
 
   const error = errMessage ? (
-    <Error dismissible={true} onClick={() => setErrMessage("")}>
+    <Alert
+      className={!isLarge ? "mb-0 rounded-0" : ""}
+      dismissible={true}
+      type="warning"
+      onClick={() => setErrMessage("")}
+    >
       {errMessage}
-    </Error>
+    </Alert>
   ) : (
     <></>
   );
+
   return (
     <section
       className="d-flex flex-column justify-content-end"

@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import Error from "../Error";
+import Alert from "../Alert";
 import SearchTitle from "../SearchTitle";
 import SearchCard from "../SearchCard";
 import SearchForm from "../SearchForm";
@@ -35,7 +35,7 @@ function SearchMovies() {
         <div className="row mt-4">
           <div className="col">
             {search.err ? (
-              <Error>{search.err}</Error>
+              <Alert type="warning">{search.err}</Alert>
             ) : (
               <SearchTitle
                 totalResults={search.totalResults}

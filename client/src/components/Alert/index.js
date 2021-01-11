@@ -1,10 +1,10 @@
 import React from "react";
 
-function Error(props) {
+function Alert(props) {
   return (
     <div
       className={
-        "alert alert-danger " +
+        `alert alert-${props.type} ` +
         (props.dismissible ? "alert-dismissible fade show" : "") +
         " " +
         props.className
@@ -29,4 +29,4 @@ function Error(props) {
   );
 }
 
-export default Error;
+export default Alert;
