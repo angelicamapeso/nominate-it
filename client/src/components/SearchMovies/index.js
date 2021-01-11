@@ -3,8 +3,10 @@ import Error from "../Error";
 import SearchTitle from "../SearchTitle";
 import SearchCard from "../SearchCard";
 import SearchForm from "../SearchForm";
+import { usePending } from "../../utils/PendingContext";
 
 function SearchMovies() {
+  const { addPending, removePending } = usePending();
   const [search, setSearch] = useState({
     movies: [],
     totalResults: 0,
@@ -14,6 +16,7 @@ function SearchMovies() {
   const setNominate = (imdbID, nominateBool) => {
     const changedMovies = search.movies.map(movie => {
       if (movie.imdbID === imdbID) {
+        nominateBool ? addPending(movie) : removePending(imdbID);
         movie.pending = nominateBool;
       }
       return movie;
