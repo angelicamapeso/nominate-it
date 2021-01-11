@@ -1,6 +1,5 @@
 import React from "react";
-import SearchCard from "../../components/SearchCard";
-import SearchForm from "../../components/SearchForm";
+import SearchMovies from "../../components/SearchMovies";
 import PendingNominees from "../../components/PendingNominees";
 
 function Home() {
@@ -13,23 +12,7 @@ function Home() {
       </section>
       <section className="container-fluid p-0 d-flex flex-column flex-lg-row">
         <div className="container-fluid px-lg-5 px-md-3">
-          <div className="row">
-            <div className="col">
-              <div className="row mt-4">
-                <div className="col">
-                  <SearchForm />
-                </div>
-              </div>
-              <div className="row">
-                <div className="col">
-                  <SearchCard />
-                </div>
-                <div className="col">
-                  <SearchCard pending={true} />
-                </div>
-              </div>
-            </div>
-          </div>
+          <SearchMovies />
         </div>
         <div className="container-fluid p-0 my-3 px-lg-5">
           <PendingNominees />
