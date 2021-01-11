@@ -8,6 +8,7 @@ export function PendingProvider(props) {
   const [pending, setPending] = useState([]);
   const [errMessage, setErrMessage] = useState("");
   const [statusMessage, setStatusMessage] = useState("");
+  const [justSent, setJustSent] = useState({});
 
   useEffect(() => {
     // console.log(pending);
@@ -19,6 +20,13 @@ export function PendingProvider(props) {
       setStatusMessage("");
     }
   }, [pending]);
+
+  useEffect(() => {
+    if (justSent.data) {
+      setStatusMessage("Success! Your nominations have been submitted.");
+      setJustSent({});
+    }
+  }, [justSent]);
 
   // add pending
   const addPending = movie => {
@@ -50,11 +58,20 @@ export function PendingProvider(props) {
   // send pending
   const sendPending = () => {
     if (pending.length === 5) {
-      sendNominees(pending).then(response => {
-        if (response.data) {
-          setPending([]);
-        }
-      });
+      sendNominees(pending)
+        .then(response => {
+          if (response.data) {
+            setPending([]);
+            setJustSent({ data: response.data });
+          } else if (response.error) {
+            setErrMessage(
+              "Sorry! Something went wrong. Please try again later."
+            );
+          }
+        })
+        .catch(() => {
+          setErrMessage("Sorry! Something went wrong. Please try again later.");
+        });
     } else {
       setErrMessage("You must have exactly 5 nominations to send them in!");
     }
