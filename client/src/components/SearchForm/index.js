@@ -8,7 +8,7 @@ function SearchForm(props) {
 
   const onSubmit = e => {
     e.preventDefault();
-    const searchTerm = searchRef.current.value;
+    const searchTerm = searchRef.current.value.trim();
     if (searchTerm) {
       searchOMDB(searchTerm).then(movies => {
         props.setSearch({ ...movies, searchTerm });
