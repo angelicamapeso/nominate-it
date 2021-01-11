@@ -1,10 +1,12 @@
 import React from "react";
 import { useMediaQuery } from "react-responsive";
+import { usePending } from "../../utils/PendingContext";
 import Button from "../Button";
 import "./style.css";
 
 function NomineeToggle(props) {
   const isLarge = useMediaQuery({ query: "(min-width: 992px)" });
+  const { sendPending } = usePending();
 
   const title = (
     <div
@@ -40,7 +42,12 @@ function NomineeToggle(props) {
   return (
     <>
       {isLarge ? title : toggler}
-      <Button theme="light" className="p-3" id="send-nominations">
+      <Button
+        theme="light"
+        className="p-3"
+        id="send-nominations"
+        onClick={() => sendPending()}
+      >
         <i className="fas fa-paper-plane"></i>
       </Button>
     </>
