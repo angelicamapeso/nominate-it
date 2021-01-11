@@ -21,9 +21,19 @@ export function PendingProvider(props) {
     setPending(changedPending);
   };
 
+  // to mark searches as pending
+  const markPendingOnSearch = movie => {
+    const movieCopy = { ...movie };
+    const foundPending = pending.find(
+      pending => pending.imdbID === movie.imdbID
+    );
+    foundPending ? (movieCopy.pending = true) : (movieCopy.pending = false);
+    return movieCopy;
+  };
+
   return (
     <PendingContext.Provider
-      value={{ pending, addPending, removePending }}
+      value={{ pending, addPending, removePending, markPendingOnSearch }}
       {...props}
     />
   );
