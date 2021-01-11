@@ -5,6 +5,7 @@ const PendingContext = React.createContext();
 export function PendingProvider(props) {
   // list of pending nominees
   const [pending, setPending] = useState([]);
+  const [errMessage, setErrMessage] = useState("");
 
   useEffect(() => {
     console.log(pending);
@@ -12,7 +13,13 @@ export function PendingProvider(props) {
 
   // add pending
   const addPending = movie => {
-    setPending([...pending, movie]);
+    if (pending.length >= 5) {
+      setErrMessage(
+        "Your nomination list is full! Remove a movie from your nomination list to add another."
+      );
+    } else {
+      setPending([...pending, movie]);
+    }
   };
 
   // remove pending
@@ -33,7 +40,14 @@ export function PendingProvider(props) {
 
   return (
     <PendingContext.Provider
-      value={{ pending, addPending, removePending, markPendingOnSearch }}
+      value={{
+        pending,
+        errMessage,
+        setErrMessage,
+        addPending,
+        removePending,
+        markPendingOnSearch,
+      }}
       {...props}
     />
   );
