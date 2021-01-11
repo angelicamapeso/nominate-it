@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import Error from "../Error";
 import SearchTitle from "../SearchTitle";
 import SearchCard from "../SearchCard";
@@ -10,10 +10,6 @@ function SearchMovies() {
     totalResults: 0,
     searchTerm: "",
   });
-
-  useEffect(() => {
-    console.log(search);
-  }, [search]);
 
   return (
     <div className="row">
