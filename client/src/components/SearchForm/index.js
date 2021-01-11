@@ -10,6 +10,7 @@ function SearchForm(props) {
     e.preventDefault();
     searchOMDB(searchRef.current.value).then(movies => {
       props.setSearch(movies);
+      searchRef.current.value = "";
     });
   };
 
