@@ -1,4 +1,6 @@
 import React, { useState, useEffect } from "react";
+import Error from "../Error";
+import SearchTitle from "../SearchTitle";
 import SearchCard from "../SearchCard";
 import SearchForm from "../SearchForm";
 
@@ -21,13 +23,26 @@ function SearchMovies() {
             <SearchForm setSearch={setSearch} />
           </div>
         </div>
+        <div className="row mt-4">
+          <div className="col">
+            {search.err ? (
+              <Error>{search.err}</Error>
+            ) : (
+              <SearchTitle
+                totalResults={search.totalResults}
+                searchTerm={search.searchTerm}
+              />
+            )}
+          </div>
+        </div>
         <div className="row">
-          <div className="col">
-            <SearchCard />
-          </div>
-          <div className="col">
-            <SearchCard pending={true} />
-          </div>
+          {search.movies
+            ? search.movies.map(movie => (
+                <div className="col-6 d-flex">
+                  <SearchCard movie={movie} />
+                </div>
+              ))
+            : ""}
         </div>
       </div>
     </div>
