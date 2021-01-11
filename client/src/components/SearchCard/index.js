@@ -8,10 +8,14 @@ function SearchCard(props) {
       <img
         className="card-image border-right"
         alt="Full Metal Jacket"
-        src="https://upload.wikimedia.org/wikipedia/en/thumb/9/99/Full_Metal_Jacket_poster.jpg/220px-Full_Metal_Jacket_poster.jpg"
+        src={
+          props.movie.poster !== "N/A" ? props.movie.poster : "top-5-empty.png"
+        }
       />
       <div className="card-body p-0 d-flex flex-column justify-content-between">
-        <p className="h5 p-3">Me And You And Everyone We Know (1978)</p>
+        <p className="h5 p-3">
+          {props.movie.title} ({props.movie.year})
+        </p>
         <Button
           className="stretched-link py-2 card-button"
           theme={props.pending ? "dark" : "grey"}
