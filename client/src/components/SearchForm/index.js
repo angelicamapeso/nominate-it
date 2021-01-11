@@ -20,7 +20,6 @@ function SearchForm(props) {
             : [],
           searchTerm,
         });
-        searchRef.current.value = "";
       });
     } else {
       props.setSearch({
@@ -28,6 +27,7 @@ function SearchForm(props) {
         searchTerm: "",
       });
     }
+    searchRef.current.value = "";
   };
 
   return (
