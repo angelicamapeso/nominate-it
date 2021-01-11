@@ -1,4 +1,4 @@
-import { formatOMDBMovie } from "./formatter";
+import { formatOMDBMovie, formatToSend } from "./formatter";
 const API_KEY = process.env.REACT_APP_API_KEY;
 
 export function searchOMDB(title) {
@@ -15,4 +15,15 @@ export function searchOMDB(title) {
         return { err: result.Error };
       }
     });
+}
+
+export function sendNominees(nominees) {
+  const toSend = formatToSend(nominees);
+  return fetch("/api", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({ movies: toSend }),
+  }).then(result => result.json());
 }
