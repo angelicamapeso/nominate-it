@@ -6,7 +6,7 @@ import SearchForm from "../SearchForm";
 import { usePending } from "../../utils/PendingContext";
 
 function SearchMovies() {
-  const { addPending, removePending } = usePending();
+  const { addPending, removePending, markPendingOnSearch } = usePending();
   const [search, setSearch] = useState({
     movies: [],
     totalResults: 0,
@@ -46,15 +46,18 @@ function SearchMovies() {
         </div>
         <div className="row">
           {search.movies
-            ? search.movies.map((movie, index) => (
-                <div className="col-6 d-flex" key={index}>
-                  <SearchCard
-                    movie={movie}
-                    nominate={() => setNominate(movie.imdbID, true)}
-                    unnominate={() => setNominate(movie.imdbID, false)}
-                  />
-                </div>
-              ))
+            ? search.movies.map(movie => {
+                const markedMovie = markPendingOnSearch(movie);
+                return (
+                  <div className="col-6 d-flex" key={markedMovie.imdbID}>
+                    <SearchCard
+                      movie={markedMovie}
+                      nominate={() => setNominate(markedMovie.imdbID, true)}
+                      unnominate={() => setNominate(markedMovie.imdbID, false)}
+                    />
+                  </div>
+                );
+              })
             : ""}
         </div>
       </div>
