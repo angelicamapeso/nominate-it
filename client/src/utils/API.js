@@ -27,3 +27,7 @@ export function sendNominees(nominees) {
     body: JSON.stringify({ movies: toSend }),
   }).then(result => result.json());
 }
+
+export function getNominees() {
+  return fetch("/api").then(result => result.json());
+}
