@@ -5,7 +5,12 @@ import "./style.css";
 function NominationCard(props) {
   return (
     <>
-      <div className="d-flex flex-row card flex-grow-1 nomination-card">
+      <div
+        className={
+          "d-flex flex-row card flex-grow-1 nomination-card " +
+          (props.draggable ? "draggable" : "")
+        }
+      >
         <img
           className="card-image nomination-image border-right"
           alt="Full Metal Jacket"
