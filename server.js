@@ -11,6 +11,10 @@ app.use(express.json());
 
 // Routers
 app.use("/api", apiRoutes);
+// to send built react pages
+app.get("*", (req, res) => {
+  res.sendFile(path.join(__dirname + "/client/build/index.html"));
+});
 
 // Start app listening
 const PORT = process.env.PORT || 5000;
