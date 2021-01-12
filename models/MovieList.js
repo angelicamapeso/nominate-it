@@ -11,6 +11,10 @@ const movieListSchema = new Schema(
         "Movie list must have 5 movies.",
       ],
     },
+    createdAt: {
+      type: Date,
+      default: Date.now(),
+    },
   },
   { id: false }
 );
