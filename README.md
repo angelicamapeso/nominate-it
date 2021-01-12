@@ -4,6 +4,8 @@
 
 :pushpin: This project is currently under development!
 
+:link: [Visit Nominate It](nominate-it.herokuapp.com/)
+
 Nominate your top 5 movies and submit your list for others to see.
 
 ![Nominations](./img/nominations.png)
