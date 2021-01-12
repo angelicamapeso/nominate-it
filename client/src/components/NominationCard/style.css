@@ -10,3 +10,7 @@
 button.remove-button {
   border-radius: 0 0.25rem 0.25rem 0;
 }
+
+.grip {
+  color: #37323e;
+}

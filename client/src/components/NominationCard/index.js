@@ -19,6 +19,13 @@ function NominationCard(props) {
           <p className="h6 p-3">
             {props.movie.title} ({props.movie.year})
           </p>
+          {props.draggable ? (
+            <p className="h5 mb-0 d-flex flex-column justify-content-center p-3 border-left grip">
+              <i class="fas fa-grip-lines"></i>
+            </p>
+          ) : (
+            ""
+          )}
         </div>
       </div>
       {props.movie.pending ? (

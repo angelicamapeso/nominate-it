@@ -15,6 +15,7 @@ function NominationList(props) {
       {props.cards.map(card => (
         <li key={card.imdbID} className="d-flex flex-row mb-3">
           <NominationCard
+            draggable={true}
             movie={card}
             removePending={() => props.removePending(card.imdbID)}
           />
