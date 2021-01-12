@@ -22,21 +22,24 @@ function Nominees() {
       </section>
       <div className="container-fluid px-lg-5 px-md-3">
         <div className="row mt-3">
-          <div className="col-12 col-md-6 col-xl-4">
-            <div className="card">
-              <div className="card-body">
-                <NomineeList className="pl-0 mb-0">
-                  {nominees.length > 0 ? (
-                    nominees[0].movies.map(nominee => (
-                      <NomineeCard movie={nominee} />
-                    ))
-                  ) : (
-                    <></>
-                  )}
-                </NomineeList>
+          {nominees.map(nominee => (
+            <div
+              className="col-12 my-3 d-flex flex-column col-md-6 col-xl-4"
+              key={nominee._id}
+            >
+              <div className="card m-2 m-lg-3 flex-grow-1">
+                <div className="card-body">
+                  <NomineeList className="pl-0 mb-0">
+                    {nominee.movies.length > 0 ? (
+                      nominee.movies.map(movie => <NomineeCard movie={movie} />)
+                    ) : (
+                      <></>
+                    )}
+                  </NomineeList>
+                </div>
               </div>
             </div>
-          </div>
+          ))}
         </div>
       </div>
     </>
