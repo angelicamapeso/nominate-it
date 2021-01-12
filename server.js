@@ -1,6 +1,7 @@
 import express from "express";
 import apiRoutes from "./routes/api-routes.js";
 import mongoose from "mongoose";
+import * as path from "path";
 
 // App
 const app = express();
