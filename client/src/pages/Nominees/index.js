@@ -28,6 +28,9 @@ function Nominees() {
               key={nominee._id}
             >
               <div className="card m-2 m-lg-3 flex-grow-1">
+                <div className="card-header">
+                  {`Submitted on ${new Date(nominee.createdAt).toDateString()}`}
+                </div>
                 <div className="card-body">
                   <NomineeList
                     className="pl-0 mb-0"
