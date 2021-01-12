@@ -19,7 +19,7 @@ function NominationCard(props) {
         {props.movie.pending ? (
           <Button
             theme="dark"
-            className="remove-button stretched-link"
+            className="remove-button"
             onClick={props.removePending}
           >
             <i className="fas fa-times-circle"></i>
