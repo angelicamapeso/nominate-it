@@ -12,6 +12,9 @@ const app = express();
 // JSON-parsing middle-ware
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
+if (process.env.NODE_ENV === "production") {
+  app.use(express.static("client/build"));
+}
 
 // Routers
 app.use("/api", apiRoutes);
