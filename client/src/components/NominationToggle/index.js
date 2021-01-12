@@ -4,7 +4,7 @@ import { usePending } from "../../utils/PendingContext";
 import Button from "../Button";
 import "./style.css";
 
-function NomineeToggle(props) {
+function NominationToggle(props) {
   const isLarge = useMediaQuery({ query: "(min-width: 992px)" });
   const { sendPending } = usePending();
 
@@ -54,4 +54,4 @@ function NomineeToggle(props) {
   );
 }
 
-export default NomineeToggle;
+export default NominationToggle;

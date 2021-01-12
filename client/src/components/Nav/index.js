@@ -12,9 +12,9 @@ function Nav() {
           </Link>
           <ul className="navbar-nav">
             <li className="nav-item">
-              <Link className="nav-link" to="/nominees">
+              <Link className="nav-link" to="/nominations">
                 <Button theme="dark">
-                  <i className="fas fa-medal mr-2"></i>Nominees
+                  <i className="fas fa-medal mr-2"></i>Nominations
                 </Button>
               </Link>
             </li>

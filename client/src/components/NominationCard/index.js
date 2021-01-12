@@ -2,11 +2,11 @@ import React from "react";
 import Button from "../Button";
 import "./style.css";
 
-function NomineeCard(props) {
+function NominationCard(props) {
   return (
-    <div className="d-flex flex-row card flex-grow-1 nominee-card">
+    <div className="d-flex flex-row card flex-grow-1 nomination-card">
       <img
-        className="card-image nominee-image border-right"
+        className="card-image nomination-image border-right"
         alt="Full Metal Jacket"
         src={
           props.movie.poster !== "N/A" ? props.movie.poster : "/top-5-empty.png"
@@ -32,4 +32,4 @@ function NomineeCard(props) {
   );
 }
 
-export default NomineeCard;
+export default NominationCard;

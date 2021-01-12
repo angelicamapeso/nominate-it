@@ -1,13 +1,13 @@
 import React from "react";
 import { useMediaQuery } from "react-responsive";
-import NomineeCard from "../NomineeCard";
-import NomineeList from "../NomineeList";
-import NomineeToggle from "../NomineeToggle";
+import NominationCard from "../NominationCard";
+import NominationList from "../NominationList";
+import NominationToggle from "../NominationToggle";
 import Alert from "../Alert";
 import { usePending } from "../../utils/PendingContext";
 import "./style.css";
 
-function PendingNominees() {
+function PendingNominations() {
   const isLarge = useMediaQuery({ query: "(min-width: 992px)" });
   const {
     errMessage,
@@ -41,18 +41,21 @@ function PendingNominees() {
   return (
     <section
       className="d-flex flex-column justify-content-end"
-      id="nominee-section"
+      id="nomination-section"
     >
       {status}
       {error}
       <div className="d-flex flex-row">
-        <NomineeToggle target="nomineeList" count={pending.length} />
+        <NominationToggle target="nominationList" count={pending.length} />
       </div>
-      <div className={"collapse " + (isLarge ? "show" : "")} id="nomineeList">
-        <NomineeList
+      <div
+        className={"collapse " + (isLarge ? "show" : "")}
+        id="nominationList"
+      >
+        <NominationList
           className="px-5 px-lg-0 py-3"
           cards={pending.map(movie => (
-            <NomineeCard
+            <NominationCard
               key={movie.imdbID}
               movie={movie}
               removePending={() => removePending(movie.imdbID)}
@@ -64,4 +67,4 @@ function PendingNominees() {
   );
 }
 
-export default PendingNominees;
+export default PendingNominations;

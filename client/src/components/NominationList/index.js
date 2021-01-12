@@ -1,9 +1,9 @@
 import React from "react";
 import "./style.css";
 
-function NomineeList(props) {
+function NominationList(props) {
   return (
-    <ol className={"nominees " + props.className}>
+    <ol className={"nominations " + props.className}>
       {props.cards.map((card, index) => (
         <li key={index} className="d-flex flex-row mb-3">
           {card}
@@ -13,4 +13,4 @@ function NomineeList(props) {
   );
 }
 
-export default NomineeList;
+export default NominationList;

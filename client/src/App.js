@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import { PendingProvider } from "./utils/PendingContext";
 import Nav from "./components/Nav";
 import Home from "./pages/Home";
-import Nominees from "./pages/Nominees";
+import Nominations from "./pages/Nominations";
 
 function App() {
   return (
@@ -12,7 +12,7 @@ function App() {
       <PendingProvider>
         <Switch>
           <Route exact path="/" component={Home} />
-          <Route exact path="/nominees" component={Nominees} />
+          <Route exact path="/nominations" component={Nominations} />
         </Switch>
       </PendingProvider>
     </Router>

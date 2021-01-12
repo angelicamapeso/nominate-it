@@ -1,4 +1,4 @@
-#nominee-section {
+#nomination-section {
   position: fixed;
   bottom: 0;
   width: 100%;
@@ -19,7 +19,7 @@
   border: 1px solid #781323;
 }
 
-#nomineeList {
+#nominationList {
   background-color: white;
 }
 
@@ -29,17 +29,17 @@
     border-radius: 0;
   }
 
-  #nomineeList {
+  #nominationList {
     overflow-y: scroll;
   }
 }
 
 @media (min-width: 992px) {
-  #nominee-section {
+  #nomination-section {
     position: relative;
   }
 
-  #nomineeList {
+  #nominationList {
     display: block;
   }
 }

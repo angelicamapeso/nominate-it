@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from "react";
-import { sendNominees } from "./API.js";
+import { sendNominations } from "./API.js";
 
 const PendingContext = React.createContext();
 
 export function PendingProvider(props) {
-  // list of pending nominees
+  // list of pending nominations
   const [pending, setPending] = useState([]);
   const [errMessage, setErrMessage] = useState("");
   const [statusMessage, setStatusMessage] = useState("");
@@ -58,7 +58,7 @@ export function PendingProvider(props) {
   // send pending
   const sendPending = () => {
     if (pending.length === 5) {
-      sendNominees(pending)
+      sendNominations(pending)
         .then(response => {
           if (response.data) {
             setPending([]);

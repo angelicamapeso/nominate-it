@@ -7,12 +7,12 @@ export function formatOMDBMovie(movie) {
   };
 }
 
-// need to make a deep copy of nominees
+// need to make a deep copy of nominations
 // since removing the pending property
-export function formatToSend(nominees) {
+export function formatToSend(nominations) {
   const toSend = [];
-  for (const nominee of nominees) {
-    const toFormat = { ...nominee };
+  for (const nomination of nominations) {
+    const toFormat = { ...nomination };
     delete toFormat.pending;
     toSend.push(toFormat);
   }

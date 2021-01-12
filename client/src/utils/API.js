@@ -17,8 +17,8 @@ export function searchOMDB(title) {
     });
 }
 
-export function sendNominees(nominees) {
-  const toSend = formatToSend(nominees);
+export function sendNominations(nominations) {
+  const toSend = formatToSend(nominations);
   return fetch("/api", {
     method: "POST",
     headers: {
@@ -28,6 +28,6 @@ export function sendNominees(nominees) {
   }).then(result => result.json());
 }
 
-export function getNominees() {
+export function getNominations() {
   return fetch("/api").then(result => result.json());
 }

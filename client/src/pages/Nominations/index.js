@@ -1,15 +1,15 @@
 import React, { useState, useEffect } from "react";
-import NomineeList from "../../components/NomineeList";
-import NomineeCard from "../../components/NomineeCard";
-import { getNominees } from "../../utils/API";
+import NominationList from "../../components/NominationList";
+import NominationCard from "../../components/NominationCard";
+import { getNominations } from "../../utils/API";
 
-function Nominees() {
-  const [nominees, setNominees] = useState([]);
+function Nominations() {
+  const [nominations, setNominations] = useState([]);
 
   useEffect(() => {
-    getNominees().then(response => {
+    getNominations().then(response => {
       console.log(response);
-      setNominees(response);
+      setNominations(response);
     });
   }, []);
 
@@ -17,33 +17,35 @@ function Nominees() {
     <>
       <section className="bg-light pt-3 pb-2 mb-4">
         <div className="container-fluid px-lg-5 px-md-3">
-          <h1>Nominees</h1>
+          <h1>Nominations</h1>
         </div>
       </section>
       <div className="container-fluid px-lg-5 px-md-3">
         <div className="row mt-3">
-          {nominees.map(nominee => (
+          {nominations.map(nomination => (
             <div
               className="col-12 my-3 d-flex flex-column col-md-6 col-xl-4"
-              key={nominee._id}
+              key={nomination._id}
             >
               <div className="card m-2 m-lg-3 flex-grow-1">
                 <div className="card-header">
-                  {`Submitted on ${new Date(nominee.createdAt).toDateString()}`}
+                  {`Submitted on ${new Date(
+                    nomination.createdAt
+                  ).toDateString()}`}
                 </div>
                 <div className="card-body">
-                  <NomineeList
+                  <NominationList
                     className="pl-0 mb-0"
                     cards={
-                      nominee.movies.length > 0 ? (
-                        nominee.movies.map(movie => (
-                          <NomineeCard movie={movie} />
+                      nomination.movies.length > 0 ? (
+                        nomination.movies.map(movie => (
+                          <NominationCard movie={movie} />
                         ))
                       ) : (
                         <></>
                       )
                     }
-                  ></NomineeList>
+                  ></NominationList>
                 </div>
               </div>
             </div>
@@ -54,4 +56,4 @@ function Nominees() {
   );
 }
 
-export default Nominees;
+export default Nominations;

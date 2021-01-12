@@ -1,9 +1,9 @@
-.nominee-image {
+.nomination-image {
   width: 20%;
   min-height: 0;
 }
 
-.card.nominee-card {
+.card.nomination-card {
   border-radius: 0 0.25rem 0.25rem 0;
 }
 

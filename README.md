@@ -8,7 +8,7 @@
 
 Nominate is a website for sending in your top 5 movies.
 
-Add movies to your nomination list by selecting a result from the search. Your submission will appear on the 'Nominees' page. Browse through the lists to see what other people nominated as their top 5's.
+Add movies to your nomination list by selecting a result from the search. Your submission will appear on the 'Nominations' page. Browse through the lists to see what other people nominated as their top 5's.
 
 All movie data is retrieved with the [OMDb API](http://www.omdbapi.com/).
 
@@ -32,7 +32,7 @@ Once you've got everything installed,
 
 (Optional)
 If you want to test out the database, run `node seeders`.
-This will insert dummy data into the database. If the insert was successful, you'll be able to see it under the 'Nominees' page.
+This will insert dummy data into the database. If the insert was successful, you'll be able to see it under the 'Nominations' page.
 
 ## Built with
 

@@ -1,6 +1,6 @@
 import React from "react";
 import SearchMovies from "../../components/SearchMovies";
-import PendingNominees from "../../components/PendingNominees";
+import PendingNominations from "../../components/PendingNominations";
 
 function Home() {
   return (
@@ -15,7 +15,7 @@ function Home() {
           <SearchMovies />
         </div>
         <div className="container-fluid p-0 my-3 px-lg-5">
-          <PendingNominees />
+          <PendingNominations />
         </div>
       </section>
     </>
