@@ -16,8 +16,10 @@ export function PendingProvider(props) {
       setStatusMessage(
         "You now have 5 nominations! Whenever you're ready, you can send them in."
       );
+      setErrMessage("");
     } else {
       setStatusMessage("");
+      setErrMessage("");
     }
   }, [pending]);
 
@@ -43,6 +45,7 @@ export function PendingProvider(props) {
   const removePending = imdbID => {
     const changedPending = pending.filter(movie => movie.imdbID !== imdbID);
     setPending(changedPending);
+    setErrMessage("");
   };
 
   // to mark searches as pending
@@ -63,16 +66,20 @@ export function PendingProvider(props) {
           if (response.data) {
             setPending([]);
             setJustSent({ data: response.data });
+            setErrMessage("");
           } else if (response.error) {
+            setStatusMessage("");
             setErrMessage(
               "Sorry! Something went wrong. Please try again later."
             );
           }
         })
         .catch(() => {
+          setStatusMessage("");
           setErrMessage("Sorry! Something went wrong. Please try again later.");
         });
     } else {
+      setStatusMessage("");
       setErrMessage("You must have exactly 5 nominations to send them in!");
     }
   };
