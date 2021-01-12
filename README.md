@@ -6,7 +6,11 @@
 
 :link: [Visit Nominate It](nominate-it.herokuapp.com/)
 
-Nominate your top 5 movies and submit your list for others to see.
+Nominate is a website for sending in your top 5 movies.
+
+Add movies to your nomination list by selecting a result from the search. Your submission will appear on the 'Nominees' page. Browse through the lists to see what other people nominated as their top 5's.
+
+All movie data is retrieved with the [OMDb API](http://www.omdbapi.com/).
 
 ![Nominations](./img/nominations.png)
 
