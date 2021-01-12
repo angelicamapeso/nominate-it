@@ -2,6 +2,9 @@ import express from "express";
 import apiRoutes from "./routes/api-routes.js";
 import mongoose from "mongoose";
 import * as path from "path";
+import { fileURLToPath } from "url";
+
+const __dirname = fileURLToPath(import.meta.url);
 
 // App
 const app = express();
