@@ -7,7 +7,7 @@ function Home() {
     <>
       <section className="bg-light pt-3 pb-2">
         <div className="container-fluid px-lg-5 px-md-3">
-          <h1>What's your top 5 movies?</h1>
+          <h1>What are your top 5 movies?</h1>
         </div>
       </section>
       <section className="container-fluid p-0 d-flex flex-column flex-lg-row">
