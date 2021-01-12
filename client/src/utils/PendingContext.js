@@ -91,6 +91,7 @@ export function PendingProvider(props) {
         errMessage,
         statusMessage,
         setErrMessage,
+        setPending,
         addPending,
         removePending,
         sendPending,
