@@ -1,8 +1,14 @@
 html,
-body {
+body,
+#root {
   height: 100%;
   margin: 0;
   padding: 0;
 
   color: #37323e;
+}
+
+#root {
+  display: flex;
+  flex-direction: column;
 }
