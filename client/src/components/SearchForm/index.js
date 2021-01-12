@@ -34,7 +34,7 @@ function SearchForm(props) {
           className="form-control"
           ref={searchRef}
           id="movie-search"
-          placeholder="Search movie titles"
+          placeholder="Search movies to nominate"
         />
         <div className="input-group-append">
           <Button className="border">
