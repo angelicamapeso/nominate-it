@@ -1,8 +1,12 @@
 # Nominate it!
 
+![Homepage](./img/home.png)
+
 :pushpin: This project is currently under development!
 
 Nominate your top 5 movies and submit your list for others to see.
+
+![Nominations](./img/nominations.png)
 
 ## Built with
 
