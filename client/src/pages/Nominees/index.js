@@ -29,13 +29,18 @@ function Nominees() {
             >
               <div className="card m-2 m-lg-3 flex-grow-1">
                 <div className="card-body">
-                  <NomineeList className="pl-0 mb-0">
-                    {nominee.movies.length > 0 ? (
-                      nominee.movies.map(movie => <NomineeCard movie={movie} />)
-                    ) : (
-                      <></>
-                    )}
-                  </NomineeList>
+                  <NomineeList
+                    className="pl-0 mb-0"
+                    cards={
+                      nominee.movies.length > 0 ? (
+                        nominee.movies.map(movie => (
+                          <NomineeCard movie={movie} />
+                        ))
+                      ) : (
+                        <></>
+                      )
+                    }
+                  ></NomineeList>
                 </div>
               </div>
             </div>
