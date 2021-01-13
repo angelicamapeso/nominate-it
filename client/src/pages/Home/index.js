@@ -13,14 +13,10 @@ function Home() {
         </div>
       </section>
       <section className="container-fluid p-0 flex-grow-1 d-flex flex-column flex-lg-row">
-        <div
-          style={{ minHeight: "100%" }}
-          className="container-fluid px-lg-5 px-md-3"
-        >
+        <div className="container-fluid px-lg-5 px-md-3">
           <SearchMovies />
         </div>
         <div
-          style={{ minHeight: "100%" }}
           className={
             "container-fluid p-0 my-3 px-lg-5 " + (isLarge ? "border-left" : "")
           }
