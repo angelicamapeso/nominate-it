@@ -1,8 +1,15 @@
 import React, { useEffect } from "react";
 import Button from "../Button";
+import $ from "jquery";
 import "./style.css";
 
 function SearchCard(props) {
+  useEffect(() => {
+    $(".search-button").popover({
+      container: "body",
+    });
+  }, []);
+
   return (
     <div className="card flex-row my-3">
       <img
