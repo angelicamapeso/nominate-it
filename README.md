@@ -2,8 +2,6 @@
 
 ![Homepage](./img/home.png)
 
-:pushpin: This project is currently under development!
-
 :link: [Visit Nominate It](https://nominate-it.herokuapp.com/)
 
 Nominate is a website for sending in your top 5 movies.

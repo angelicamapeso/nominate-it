@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import NominationList from "../../components/NominationList";
-import NominationCard from "../../components/NominationCard";
 import { getNominations } from "../../utils/API";
 
 function Nominations() {
@@ -37,15 +36,9 @@ function Nominations() {
                   <NominationList
                     className="pl-0 mb-0"
                     cards={
-                      nomination.movies.length > 0 ? (
-                        nomination.movies.map(movie => (
-                          <NominationCard movie={movie} />
-                        ))
-                      ) : (
-                        <></>
-                      )
+                      nomination.movies.length > 0 ? nomination.movies : []
                     }
-                  ></NominationList>
+                  />
                 </div>
               </div>
             </div>

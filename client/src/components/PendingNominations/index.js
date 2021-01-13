@@ -1,6 +1,5 @@
 import React from "react";
 import { useMediaQuery } from "react-responsive";
-import NominationCard from "../NominationCard";
 import NominationList from "../NominationList";
 import NominationToggle from "../NominationToggle";
 import Alert from "../Alert";
@@ -13,6 +12,7 @@ function PendingNominations() {
     errMessage,
     statusMessage,
     pending,
+    setPending,
     removePending,
     setErrMessage,
   } = usePending();
@@ -53,14 +53,11 @@ function PendingNominations() {
         id="nominationList"
       >
         <NominationList
+          sortable={true}
           className="px-5 px-lg-0 py-3"
-          cards={pending.map(movie => (
-            <NominationCard
-              key={movie.imdbID}
-              movie={movie}
-              removePending={() => removePending(movie.imdbID)}
-            />
-          ))}
+          cards={pending}
+          setCards={setPending}
+          removePending={removePending}
         />
       </div>
     </section>
