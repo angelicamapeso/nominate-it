@@ -49,7 +49,7 @@ function SearchMovies() {
             )}
           </div>
         </div>
-        <div className="row">
+        <div className="row mb-5">
           {search.movies
             ? search.movies.map(movie => {
                 const markedMovie = markPendingOnSearch(movie);
