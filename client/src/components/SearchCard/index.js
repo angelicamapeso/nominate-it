@@ -24,9 +24,24 @@ function SearchCard(props) {
           {props.movie.title} ({props.movie.year})
         </p>
         <Button
-          className="stretched-link py-2 card-button"
+          type="button"
+          className="stretched-link py-2 card-button search-button"
           theme={props.movie.pending ? "dark" : "grey"}
           onClick={props.movie.pending ? props.unnominate : props.nominate}
+          data-container="body"
+          data-trigger="focus"
+          data-original-title={
+            props.pendingLength >= 5 && !props.movie.pending
+              ? "Your nomination list is full!"
+              : ""
+          }
+          data-toggle="popover"
+          data-placement="top"
+          data-content={
+            props.pendingLength >= 5 && !props.movie.pending
+              ? "Please remove a movie before adding another."
+              : ""
+          }
         >
           <i
             className={
