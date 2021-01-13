@@ -7,7 +7,7 @@ function SearchCard(props) {
     <div className="card flex-row my-3">
       <img
         className="card-image border-right"
-        alt="Full Metal Jacket"
+        alt={props.movie.title}
         src={
           props.movie.poster !== "N/A" ? props.movie.poster : "top-5-empty.png"
         }
