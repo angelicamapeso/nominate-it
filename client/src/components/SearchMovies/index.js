@@ -6,7 +6,12 @@ import SearchForm from "../SearchForm";
 import { usePending } from "../../utils/PendingContext";
 
 function SearchMovies() {
-  const { addPending, removePending, markPendingOnSearch } = usePending();
+  const {
+    pending,
+    addPending,
+    removePending,
+    markPendingOnSearch,
+  } = usePending();
   const [search, setSearch] = useState({
     movies: [],
     totalResults: 0,
@@ -51,6 +56,7 @@ function SearchMovies() {
                 return (
                   <div className="col-6 d-flex" key={markedMovie.imdbID}>
                     <SearchCard
+                      pendingLength={pending.length}
                       movie={markedMovie}
                       nominate={() => setNominate(markedMovie.imdbID, true)}
                       unnominate={() => setNominate(markedMovie.imdbID, false)}
