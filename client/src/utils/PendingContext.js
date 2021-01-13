@@ -32,11 +32,7 @@ export function PendingProvider(props) {
 
   // add pending
   const addPending = movie => {
-    if (pending.length >= 5) {
-      setErrMessage(
-        "Your nomination list is full! Remove a movie from your nomination list to add another."
-      );
-    } else {
+    if (pending.length < 5) {
       setPending([...pending, movie]);
     }
   };
